@@ -10,7 +10,7 @@ Wireless Network Connection,Intel(R) Centrino(R) Advanced-N 6205,8C-70-5A-1F-0B-
 Bluetooth Network Connection,Bluetooth Device (Personal Area Network),C0-18-85-DA-13-63,Media disconnected
 """
 
-regular_correct_mac = r"""D4-BE-D9-23-F0-E5"""
+regular_correct_mac = (r"""D4-BE-D9-23-F0-E5""",)
 
 multiple_devices_getmac_output = r"""
 Connection Name,Network Adapter,Physical Address,Transport Name

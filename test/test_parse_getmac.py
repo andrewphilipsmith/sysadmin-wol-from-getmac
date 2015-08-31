@@ -2,7 +2,7 @@ __author__ = 'andy'
 
 import unittest
 import fixtures
-
+import parse_getmac
 
 class TestGetMacMethods(unittest.TestCase):
 
@@ -13,9 +13,9 @@ class TestGetMacMethods(unittest.TestCase):
     requirement.
     """
     def test_mac_from_getmac(self):
-        self.assertEqual(mac_from_getmac(fixtures.regular_getmac_output),
+        self.assertEqual(parse_getmac.wired_mac_from_getmac(fixtures.regular_getmac_output),
                          fixtures.regular_correct_mac)
-        self.assertEqual(mac_from_getmac(fixtures.multiple_devices_getmac_output),
+        self.assertEqual(parse_getmac.wired_mac_from_getmac(fixtures.multiple_devices_getmac_output),
                          fixtures.multiple_devices_correct_mac)
 
 if __name__ == '__main__':
