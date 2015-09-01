@@ -31,3 +31,10 @@ Bluetooth Network Connection,Bluetooth Device (Personal Area Network),C0-18-85-D
 """
 
 multiple_devices_correct_mac = (r"""D4-BE-D9-23-F0-E5""", r"""D4-BE-D9-23-F0-E6""")
+
+dummy_file_names_all = ('test12.csv', 'test13.csv', 'test14.csv', 'test15.csv',)
+dummy_file_names_odd = ('test13.csv', 'test15.csv')
+dummy_file_names_even = ('test12.csv', 'test14.csv')
+file_name_regex_odd = "test\d[13579].csv"
+file_name_regex_even = "test\d[02468].csv"
+
