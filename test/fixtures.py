@@ -10,7 +10,15 @@ Wireless Network Connection,Intel(R) Centrino(R) Advanced-N 6205,8C-70-5A-1F-0B-
 Bluetooth Network Connection,Bluetooth Device (Personal Area Network),C0-18-85-DA-13-63,Media disconnected
 """
 
-regular_correct_mac = r"""D4-BE-D9-23-F0-E5"""
+regular_correct_mac = (r"""D4-BE-D9-23-F0-E5""",)
+
+regular_getmac_output_quotes = r'''
+"Connection Name","Network Adapter","Physical Address","Transport Name"
+"Local Area Connection","Realtek PCIe GBE Family Controller","D4-BE-D9-23-F0-E5","\Device\Tcpip_{4FEA90EE-E666-4D96-A5E6-86EFCF077C0A}"
+"Wireless Network Connection","Dell Wireless 1397 WLAN Mini-Card","F0-7B-CB-72-A7-C7","Media disconnected"
+"Local Area Connection 3","VMware Virtual Ethernet Adapter for VMnet1","00-50-56-C0-00-01","\Device\Tcpip_{F0402804-844E-4138-94A8-2B622204C2AF}"
+"Local Area Connection 2","VMware Virtual Ethernet Adapter for VMnet8","00-50-56-C0-00-08","\Device\Tcpip_{1AED1EAF-17C7-4D40-946A-5F849FBB726A}"
+'''
 
 multiple_devices_getmac_output = r"""
 Connection Name,Network Adapter,Physical Address,Transport Name
@@ -23,3 +31,10 @@ Bluetooth Network Connection,Bluetooth Device (Personal Area Network),C0-18-85-D
 """
 
 multiple_devices_correct_mac = (r"""D4-BE-D9-23-F0-E5""", r"""D4-BE-D9-23-F0-E6""")
+
+dummy_file_names_all = ('test12.csv', 'test13.csv', 'test14.csv', 'test15.csv',)
+dummy_file_names_odd = ('test13.csv', 'test15.csv')
+dummy_file_names_even = ('test12.csv', 'test14.csv')
+file_name_regex_odd = "test\d[13579].csv"
+file_name_regex_even = "test\d[02468].csv"
+
