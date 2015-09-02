@@ -4,20 +4,20 @@ import os.path
 import re
 import sys
 
-cur_dir = os.path.realpath(os.path.abspath(os.path.dirname(inspect.getfile(inspect.currentframe()))))
+# cur_dir = os.path.realpath(os.path.abspath(os.path.dirname(inspect.getfile(inspect.currentframe()))))
+#
+# wol_dir = os.path.join(cur_dir, 'pywakeonlan', 'wakeonlan')
+# print wol_dir
+# if wol_dir not in sys.path:
+#     sys.path.append(wol_dir)
 
-wol_dir = os.path.join(cur_dir, 'pywakeonlan', 'wakeonlan')
-print wol_dir
-if wol_dir not in sys.path:
-    sys.path.append(wol_dir)
-
-import wol
+# import wol
+from wakeonlan import wol
 
 _pattern = None
 
 
-# TODO: I'm sure that this could be handled more elegantly handed using a closure.
-def _set_regex():
+def _create_regex():
     if _pattern is not None:
         return _pattern
     else:
@@ -30,7 +30,7 @@ def _set_regex():
 
 
 def wired_mac_from_getmac(getmac_text):
-    pattern = _set_regex()
+    pattern = _create_regex()
     result = ()
     for match in pattern.finditer(getmac_text):
         mac_long_form = match.group('mac')
