@@ -1,5 +1,10 @@
 from distutils.core import setup
 import sys
+
+import pip
+# pip.main(['install', 'py2exe==0.6.9', '--allow-external', 'py2exe', '--allow-unverified', 'py2exe'])
+# pip.main(['install', 'py2exe'])
+pip.main(['install', 'wakeonlan'])
 import py2exe
 
 sys.argv.append('py2exe')
