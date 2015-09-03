@@ -3,3 +3,4 @@ venv/
 *.pyc
 /dist/
 /build/
+/py2exe-0.6.9/
