@@ -1,0 +1,1 @@
+robocopy %~dp0dist Y:\tools /xd .git /xf *.log /xf *.pyc
