@@ -1,8 +1,8 @@
 version: 1.0.{build}-{branch}
 
 init:
-  - 'C:\Python34\Scripts\pip.exe py2exe'
-  - 'C:\Python34\Scripts\pip.exe wakeonlan'
+  - 'C:\Python34\Scripts\pip.exe install py2exe'
+  - 'C:\Python34\Scripts\pip.exe install wakeonlan'
 
 install:
   - 'C:\Python34\python.exe setup.py'
