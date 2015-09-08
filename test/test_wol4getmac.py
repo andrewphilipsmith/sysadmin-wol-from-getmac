@@ -39,7 +39,7 @@ class TestGetMacMethods(unittest.TestCase):
                       (fixtures.dummy_file_names_even, fixtures.file_name_regex_even))
         for pair in test_pairs:
             result = ()
-            for full_path in wol4getmac.get_files(self.tmpdir, pair[1]):
+            for full_path in wol4getmac.get_files(self.tmpdir, pair[1], False):
                 result += (os.path.split(full_path)[1],)
 
             self.assertEqual(result, pair[0])
