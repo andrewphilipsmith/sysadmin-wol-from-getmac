@@ -5,6 +5,6 @@ install:
   - pip install coveralls
   - pip install -r requirements.txt
 script:
-  - coverage run --include=./test/*.py -m unittest discover
+  - coverage run --include=./test/*.py -m unittest discover -s test
 after_success:
   coveralls
