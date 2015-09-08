@@ -1,8 +1,6 @@
 language: python
 python:
   - "3.3"
-virtualenv:
-  system_site_packages: true
 install:
   - pip install coveralls
   - pip install -r requirements.txt
