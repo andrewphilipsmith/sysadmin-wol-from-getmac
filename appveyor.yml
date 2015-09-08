@@ -1,0 +1,10 @@
+version: 1.0.{build}-{branch}
+
+init:
+  - 'C:\Python34\Scripts\pip.exe py2exe'
+  - 'C:\Python34\Scripts\pip.exe wakeonlan'
+
+install:
+  - 'C:\Python34\python.exe setup.py'
+test_script:
+  - 'C:\Python34\python.exe -m unittest'
