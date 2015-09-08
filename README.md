@@ -8,8 +8,7 @@ Build status
 
 [![Build status](https://ci.appveyor.com/api/projects/status/krp9l5yt7wio4bcb?svg=true)](https://ci.appveyor.com/project/andrewphilipsmith/sysadmin-wol-from-getmac) Appveyor master branch
 
-Coveralls master ...
-
+[![Coverage Status](https://coveralls.io/repos/mapaction/sysadmin-wol-from-getmac/badge.svg?branch=master&service=github)](https://coveralls.io/github/mapaction/sysadmin-wol-from-getmac?branch=master) Coveralls master branch
 
 Creating the getmac files
 -------------------------
