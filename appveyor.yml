@@ -11,6 +11,3 @@ build: off
 test_script:
   - 'C:\Python34\python.exe -m unittest discover -s test'
 
-branches:
-  except:
-  - master
