@@ -1,6 +1,8 @@
+#!python3.3
 import argparse
 import os.path
 import re
+import sys
 from wakeonlan import wol
 
 _pattern = None
@@ -55,23 +57,27 @@ def main(args):
         dir_path = os.getcwd()
 
     if not os.path.exists(dir_path):
-        print 'Invalid directory "{}". Either the directory does not exist or read ' \
-              'permissions are not available'.format(dir_path)
-        exit(1)
+        print('Invalid directory "{}". Either the directory does not exist or read ' \
+              'permissions are not available'.format(dir_path))
+        sys.exit(1)
 
     for getmac_file_name in get_files(dir_path, file_name_regex, recurse_dirs):
         if os.path.exists(getmac_file_name):
-            f = open(getmac_file_name, 'r')
-            text = f.read()
-            f.close()
+            try:
+                f = open(getmac_file_name, 'r')
+                text = f.read()
+            except UnicodeDecodeError:
+                pass
+            finally:
+                f.close()
 
             macs = wired_mac_from_getmac(text)
             if len(macs) > 0:
-                print "Sending WOL magic pack to {}, extracted from {}". format(macs, getmac_file_name)
+                print("Sending WOL magic pack to {}, extracted from {}". format(macs, getmac_file_name))
                 for mac in macs:
                     wol.send_magic_packet(mac)
             else:
-                print "No suitable MAC addresses where found in {}". format(getmac_file_name)
+                print("No suitable MAC addresses where found in {}". format(getmac_file_name))
 
 
 if __name__ == '__main__':
