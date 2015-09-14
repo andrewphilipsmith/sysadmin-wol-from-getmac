@@ -8,12 +8,15 @@ install:
 
 build: off
 
+after_build:
+  - cmd: 7z a dist\full-app.zip %APPVEYOR_BUILD_FOLDER%\dist\*.*
+
 test_script:
   - 'C:\Python34\python.exe -m unittest discover -s test'
 
 artifacts:
   # pushing all files from the 'dist' dir. This is the dir created by the py2exe setup.py script
-  - path: dist\*.*
+  - path: dist\dist\full-app.zip
     name: wol4getmac-with-wrapper
 
   # pushing all files from the 'dist' dir. This is the dir created by the py2exe setup.py script
