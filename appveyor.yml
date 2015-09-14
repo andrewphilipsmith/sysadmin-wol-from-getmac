@@ -9,5 +9,39 @@ install:
 build: off
 
 test_script:
+  - '7z a dist\full-app.zip %APPVEYOR_BUILD_FOLDER%\dist\*.*'
   - 'C:\Python34\python.exe -m unittest discover -s test'
 
+artifacts:
+  # pushing all files from the 'dist' dir. This is the dir created by the py2exe setup.py script
+  - path: dist\full-app.zip
+    name: wol4getmac-with-wrapper
+
+  # pushing all files from the 'dist' dir. This is the dir created by the py2exe setup.py script
+  - path: dist\wol4getmac.exe
+    name: wol4getmac-exe-only
+
+deploy:
+  - provider: GitHub
+    release: v$(appveyor_build_version)
+    tag: wol4getmac-v$(appveyor_build_version)
+    description: 'WOL4gemac $(appveyor_build_version) test build'
+    auth_token:
+      secure: CPCziyJfNW/ijQVihvGnmqGX4zst+O0o5zC2XMTEXJKPTWpWhADW2E65XNaFMvQu
+    artifact:  wol4getmac-with-wrapper, wol4getmac-exe-only
+    draft: true
+    prerelease: true
+    on:
+      branch: /(?!(master)).+/
+
+  - provider: GitHub
+    release: v$(appveyor_build_version)
+    tag: wol4getmac-v$(appveyor_build_version)
+    description: 'WOL4gemac $(appveyor_build_version)'
+    auth_token:
+      secure: CPCziyJfNW/ijQVihvGnmqGX4zst+O0o5zC2XMTEXJKPTWpWhADW2E65XNaFMvQu
+    artifact:  wol4getmac-with-wrapper, wol4getmac-exe-only
+    draft: false
+    prerelease: false
+    on:
+      branch: master
