@@ -9,7 +9,7 @@ install:
 build: off
 
 after_build:
-  - cmd: 7z a dist\full-app.zip %APPVEYOR_BUILD_FOLDER%\dist\*.*
+  - cmd: '7z a dist\full-app.zip %APPVEYOR_BUILD_FOLDER%\dist\*.*'
 
 test_script:
   - 'C:\Python34\python.exe -m unittest discover -s test'
