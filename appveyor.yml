@@ -20,3 +20,13 @@ artifacts:
   # pushing all files from the 'dist' dir. This is the dir created by the py2exe setup.py script
   - path: dist\wol4getmac.exe
     name: wol4getmac-exe-only
+
+deploy:
+  release: wol4getmac-v$(appveyor_build_version)
+  description: 'WOL4gemac $(appveyor_build_version)'
+  provider: GitHub
+  auth_token:
+    secure: CPCziyJfNW/ijQVihvGnmqGX4zst+O0o5zC2XMTEXJKPTWpWhADW2E65XNaFMvQu
+  artifact:  wol4getmac-with-wrapper, wol4getmac-exe-only
+  draft: true
+  prerelease: false
