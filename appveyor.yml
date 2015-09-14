@@ -14,7 +14,7 @@ test_script:
 
 artifacts:
   # pushing all files from the 'dist' dir. This is the dir created by the py2exe setup.py script
-  - path: dist\dist\full-app.zip
+  - path: dist\full-app.zip
     name: wol4getmac-with-wrapper
 
   # pushing all files from the 'dist' dir. This is the dir created by the py2exe setup.py script
