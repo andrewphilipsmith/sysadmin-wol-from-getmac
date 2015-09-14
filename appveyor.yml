@@ -11,3 +11,11 @@ build: off
 test_script:
   - 'C:\Python34\python.exe -m unittest discover -s test'
 
+artifacts:
+  # pushing all files from the 'dist' dir. This is the dir created by the py2exe setup.py script
+  - path: dist\*.*
+    name: wol4getmac-with-wrapper
+
+  # pushing all files from the 'dist' dir. This is the dir created by the py2exe setup.py script
+  - path: dist\wol4getmac.exe
+    name: wol4getmac-exe-only
