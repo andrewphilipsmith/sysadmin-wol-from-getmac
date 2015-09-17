@@ -24,7 +24,7 @@ artifacts:
 deploy:
   - provider: GitHub
     release: v$(appveyor_build_version)
-    tag: wol4getmac-v$(appveyor_build_version)
+    tag: v$(appveyor_build_version)
     description: 'WOL4gemac $(appveyor_build_version) test build'
     auth_token:
       secure: CPCziyJfNW/ijQVihvGnmqGX4zst+O0o5zC2XMTEXJKPTWpWhADW2E65XNaFMvQu
@@ -36,7 +36,7 @@ deploy:
 
   - provider: GitHub
     release: v$(appveyor_build_version)
-    tag: wol4getmac-v$(appveyor_build_version)
+    tag: v1.0.{build}
     description: 'WOL4gemac $(appveyor_build_version)'
     auth_token:
       secure: CPCziyJfNW/ijQVihvGnmqGX4zst+O0o5zC2XMTEXJKPTWpWhADW2E65XNaFMvQu
